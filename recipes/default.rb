@@ -22,7 +22,7 @@ package "perl" do
 end
 
 if %w{redhat centos fedora scientific oracle amazon}.include?(node['platform'])
-  package "perl-CPAN" do
+  package "perl-CPANPLUS" do
     action :upgrade
   end
 end
@@ -42,7 +42,7 @@ end
 
 libperl_dev = case node[:platform]
   when "redhat","centos","fedora","scientific","oracle","amazon"
-    "perl-devel"
+    "perl-Glib-devel"
   when "ubuntu","debian","mint" 
     "libperl-dev"
   when "arch"
